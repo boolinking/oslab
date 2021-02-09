@@ -186,22 +186,6 @@ p_mode_start:
     jmp SELECTOR_CODE:enter_kernel
 
 enter_kernel:
-    mov byte [gs:320], 'k'     ;视频段段基址已经被更新
-    mov byte [gs:322], 'e'     ;视频段段基址已经被更新
-    mov byte [gs:324], 'r'     ;视频段段基址已经被更新
-    mov byte [gs:326], 'n'     ;视频段段基址已经被更新
-    mov byte [gs:328], 'e'     ;视频段段基址已经被更新
-    mov byte [gs:330], 'l'     ;视频段段基址已经被更新
-
-    mov byte [gs:480], 'w'     ;视频段段基址已经被更新
-    mov byte [gs:482], 'h'     ;视频段段基址已经被更新
-    mov byte [gs:484], 'i'     ;视频段段基址已经被更新
-    mov byte [gs:486], 'l'     ;视频段段基址已经被更新
-    mov byte [gs:488], 'e'     ;视频段段基址已经被更新
-    mov byte [gs:490], '('     ;视频段段基址已经被更新
-    mov byte [gs:492], '1'     ;视频段段基址已经被更新
-    mov byte [gs:494], ')'     ;视频段段基址已经被更新
-    mov byte [gs:496], ';'     ;视频段段基址已经被更新
     call kernel_init
     mov esp, 0xc009f000
     jmp KERNEL_ENTRY_POINT                 ; 用地址0x1500访问测试，结果ok
